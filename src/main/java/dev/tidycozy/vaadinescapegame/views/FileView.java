@@ -19,7 +19,9 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 /**
- * This view is exploiting the grid and form capabilities of Vaadin as demonstrated in the tutorial.
+ * This view demonstrates {@link Grid}, {@link com.vaadin.flow.component.formlayout.FormLayout},
+ * {@link com.vaadin.flow.component.formlayout.FormLayout} and {@link com.vaadin.flow.data.binder.BeanValidationBinder}
+ * Vaadin component and API.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "file", layout = LobbyView.class)

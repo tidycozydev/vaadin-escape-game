@@ -25,9 +25,7 @@ import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinSession;
 
 /**
- * This view provides the header and navigation bar for every other views.
- *
- * Items are added in the navigation bar each time the player progresses in the game.
+ * This view demonstrates {@link AppLayout} Vaadin component.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "lobby")

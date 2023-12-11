@@ -18,7 +18,7 @@ import com.vaadin.flow.shared.Registration;
 import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 
 /**
- * This view uses tab navigation, accordion and text area Vaadin components.
+ * This view demonstrates {@link TabSheet}, {@link Accordion} and {@link TextArea} Vaadin components.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "case", layout = LobbyView.class)

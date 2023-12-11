@@ -8,9 +8,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * We don't deploy any database for this app. This service is just an example of
- * how to use a Spring Service with Vaadin and use the IoC.
- * That is why we pass a dumb database as a parameter of each method.
+ * This service is an example of how to use a Spring Service with Vaadin.
+ * As we don't have any persistence, we pass the session-scoped/in-memory "database" as a parameter of each method.
  */
 @Service
 public class PersonService {

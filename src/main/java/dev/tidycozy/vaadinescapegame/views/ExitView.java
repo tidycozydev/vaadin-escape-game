@@ -17,6 +17,9 @@ import dev.tidycozy.vaadinescapegame.session.SessionData;
 
 import java.util.Arrays;
 
+/**
+ * This view demonstrates {@link IntegerField} and {@link ConfirmDialog} Vaadin component.
+ */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "exit", layout = LobbyView.class)
 public class ExitView extends MiniGameView {

@@ -7,9 +7,8 @@ import dev.tidycozy.vaadinescapegame.utils.ApplicationUtils;
 import java.util.List;
 
 /**
- * Keeps track of the progress in the game, the player's name
- * and the dumb database for the file mini-game. The instance
- * is stored in the {@link com.vaadin.flow.server.VaadinSession}.
+ * Keeps track of the progress in the game, the player's name and the dumb database for the file mini-game.
+ * The instance is stored in the {@link com.vaadin.flow.server.VaadinSession} of each player.
  */
 public class SessionData {
 

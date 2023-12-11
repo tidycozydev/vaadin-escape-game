@@ -13,7 +13,7 @@ import dev.tidycozy.vaadinescapegame.components.MiniGameView;
 import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 
 /**
- * This view uses the drag and drop API of Vaadin
+ * This view is an alternative of {@link PuzzleView} for mobiles.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "puzzle-mobile", layout = LobbyView.class)

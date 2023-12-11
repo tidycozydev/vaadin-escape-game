@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This view uses message components provided by Vaadin to chat with a dumb dog robot.
+ * This view demonstrates {@link MessageList} and {@link MessageInput} Vaadin components.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "chat", layout = LobbyView.class)

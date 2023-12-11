@@ -19,9 +19,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
 
 /**
- * First view displaying a dialog to collect the player's name.
- *
- * The object {@link SessionData} which hold game progression is created when the player specify its name.
+ * This view demonstrates {@link Dialog} Vaadin component and access to {@link VaadinSession}.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "")
