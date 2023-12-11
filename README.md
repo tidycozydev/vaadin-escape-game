@@ -13,6 +13,10 @@ No data persistence nor testing were implemented for this very small-sized proje
 
 Have fun with it: https://tidycozy.dev/vaadin-escape-game
 
+## What's next?
+
+I intend to implement statistics and some machine learning to improve the dogbot.
+
 ## Build the jar
 
 From the tutorial README.md:
