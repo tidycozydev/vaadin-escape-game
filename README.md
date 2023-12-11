@@ -1,9 +1,9 @@
 # Vaadin Escape Game
 
-First contact with development for the last year and a half. Obviously, nothing crazy!
+First contact with development for the last year and a half. Obviously, nothing crazy.
 
 Vaadin has changed a lot since the last time I've used this framework.
-This application was a funny way to relearn how to code with it.
+This application/game was a funny way to relearn how to code with it.
 
 ## Project development
 
