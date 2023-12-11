@@ -8,6 +8,9 @@ import com.vaadin.flow.server.VaadinSession;
 import dev.tidycozy.vaadinescapegame.session.SessionData;
 import dev.tidycozy.vaadinescapegame.views.TitleScreenView;
 
+/**
+ * An abstract view providing useful methods such as displaying notification and getting the {@link SessionData} object.
+ */
 public abstract class MiniGameView extends VerticalLayout {
 
     protected SessionData sessionData;

@@ -3,6 +3,9 @@ package dev.tidycozy.vaadinescapegame.events;
 import com.vaadin.flow.component.ComponentEvent;
 import dev.tidycozy.vaadinescapegame.components.MiniGameView;
 
+/**
+ * Event fired when the player finishes a mini-game. We use it to update the game's elements.
+ */
 public class MiniGameDoneEvent extends ComponentEvent<MiniGameView> {
 
     public enum Minigames {

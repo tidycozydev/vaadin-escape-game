@@ -15,7 +15,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 
 /**
- * The {@link FormLayout} and {@link BeanValidationBinder} are used in this form.
+ * Vaadin {@link FormLayout} and {@link BeanValidationBinder} are used in this form allowing to edit a {@link Person}.
  */
 public class PersonForm extends FormLayout {
 

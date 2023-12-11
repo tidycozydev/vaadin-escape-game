@@ -4,6 +4,9 @@ import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.progressbar.ProgressBar;
 
+/**
+ * A custom notification that doesn't display any text, just a loading bar for the duration specified.
+ */
 public class LoadingNotification extends Notification {
 
     public LoadingNotification(int duration) {

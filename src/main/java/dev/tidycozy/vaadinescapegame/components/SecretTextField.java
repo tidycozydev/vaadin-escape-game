@@ -3,8 +3,7 @@ package dev.tidycozy.vaadinescapegame.components;
 import com.vaadin.flow.component.textfield.TextField;
 
 /**
- * This component is an override of the Vaadin {@link TextField} to handle
- * the presentation of a secret value.
+ * This component is a Vaadin {@link TextField} allowing to display or to hide the actual value of the field.
  */
 public class SecretTextField extends TextField {
 
