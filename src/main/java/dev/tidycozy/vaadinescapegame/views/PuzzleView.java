@@ -21,20 +21,20 @@ import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 @Route(value = "puzzle", layout = LobbyView.class)
 public class PuzzleView extends MiniGameView {
 
-    private final VerticalLayout puzzleLayout = new VerticalLayout();
+    protected final VerticalLayout puzzleLayout = new VerticalLayout();
 
-    private final HorizontalLayout dropLayout1 = new HorizontalLayout();
+    protected final HorizontalLayout dropLayout1 = new HorizontalLayout();
 
-    private final HorizontalLayout dropLayout2 = new HorizontalLayout();
+    protected final HorizontalLayout dropLayout2 = new HorizontalLayout();
 
-    private final HorizontalLayout piecesLayout1 = new HorizontalLayout();
+    protected final HorizontalLayout piecesLayout1 = new HorizontalLayout();
 
-    private final HorizontalLayout piecesLayout2 = new HorizontalLayout();
+    protected final HorizontalLayout piecesLayout2 = new HorizontalLayout();
 
     private DragSource<Image> topLeftImage, topMiddleImage, topRightImage,
             bottomLeftImage, bottomMiddleImage, bottomRightImage;
 
-    private int goodLocationCount = 0;
+    protected int goodLocationCount = 0;
 
     public PuzzleView() {
         setSizeFull();
@@ -45,7 +45,7 @@ public class PuzzleView extends MiniGameView {
         configurePuzzleLayout(); // This global layout needs the other elements to be instantiated, we call it last
     }
 
-    private void configurePuzzleLayout() {
+    protected void configurePuzzleLayout() {
         puzzleLayout.setSizeUndefined();
         puzzleLayout.addClassName(LumoUtility.Background.BASE);
         puzzleLayout.add(dropLayout1, dropLayout2);
@@ -140,7 +140,7 @@ public class PuzzleView extends MiniGameView {
         return layout;
     }
 
-    private void checkLocationCount() {
+    protected void checkLocationCount() {
         if (goodLocationCount > 5) {
             switchPiecesToPicture();
             showProgressionNotification("Got the first digit! Let's investigate that Mr. Swift.");
@@ -149,7 +149,7 @@ public class PuzzleView extends MiniGameView {
         }
     }
 
-    private void switchPiecesToPicture() {
+    protected void switchPiecesToPicture() {
         puzzleLayout.removeAll();
         Image image = new Image(
                 "images/complete-postit.png",

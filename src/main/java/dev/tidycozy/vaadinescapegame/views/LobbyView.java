@@ -103,8 +103,7 @@ public class LobbyView extends AppLayout {
 
         updateTabs();
 
-        // The four coming calls are used to follow the player's progression and unlock
-        // elements in the escape game as they progress
+        // This allows to follow the player's progression and unlock elements in the escape game as they progress
         ComponentUtil.addListener(getUI().get(), MiniGameDoneEvent.class, this::miniGameDone);
     }
 
@@ -148,7 +147,7 @@ public class LobbyView extends AppLayout {
         Tab exitTab = createTab(VaadinIcon.EXIT, "The exit", ExitView.class);
 
         // The puzzle view
-        // different for mobile devices due to lack of stability for drag n drop API
+        //Different for mobile devices due to lack of stability for drag n drop API
         String puzzleTabLabel = "The puzzle" + (sessionData.isFileUnlock() ? " - 3" : "");
         WebBrowser browser = getUI().get().getSession().getBrowser();
         Class<? extends Component> viewClass =

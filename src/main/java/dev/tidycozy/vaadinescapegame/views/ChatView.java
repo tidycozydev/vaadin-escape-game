@@ -77,7 +77,7 @@ public class ChatView extends MiniGameView {
 
     /**
      * Big method with some "logic" for the robot to understand and answer to the player.
-     * The robot is really dumb, could improve that in the future using machine learning.
+     * The robot is really dumb, could improve that in the future using machine learning?
      */
     private void robotProcess() {
         String answer;

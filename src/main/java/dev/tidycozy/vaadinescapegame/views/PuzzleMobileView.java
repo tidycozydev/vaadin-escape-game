@@ -1,37 +1,21 @@
 package dev.tidycozy.vaadinescapegame.views;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import dev.tidycozy.vaadinescapegame.components.MiniGameView;
-import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 
 /**
  * This view is an alternative of {@link PuzzleView} for mobiles.
  */
 @PageTitle("Vaadin Escape Game")
 @Route(value = "puzzle-mobile", layout = LobbyView.class)
-public class PuzzleMobileView extends MiniGameView {
-
-    private final VerticalLayout puzzleLayout = new VerticalLayout();
-
-    private final HorizontalLayout dropLayout1 = new HorizontalLayout();
-
-    private final HorizontalLayout dropLayout2 = new HorizontalLayout();
-
-    private final HorizontalLayout piecesLayout1 = new HorizontalLayout();
-
-    private final HorizontalLayout piecesLayout2 = new HorizontalLayout();
+public class PuzzleMobileView extends PuzzleView {
 
     private Image selectedImage;
-
-    private int goodLocationCount = 0;
 
     public PuzzleMobileView() {
         setSizeFull();
@@ -39,17 +23,6 @@ public class PuzzleMobileView extends MiniGameView {
         configurePuzzlePiecesAndLayouts();
         configureDropZonesAndLayouts();
         configurePuzzleLayout();
-    }
-
-    private void configurePuzzleLayout() {
-        puzzleLayout.setSizeUndefined();
-        puzzleLayout.addClassName(LumoUtility.Background.BASE);
-        puzzleLayout.add(dropLayout1, dropLayout2);
-        puzzleLayout.add(piecesLayout1, piecesLayout2);
-
-        add(puzzleLayout);
-
-        setHorizontalComponentAlignment(Alignment.CENTER, puzzleLayout);
     }
 
     private void configurePuzzlePiecesAndLayouts() {
@@ -137,34 +110,6 @@ public class PuzzleMobileView extends MiniGameView {
         });
 
         return layout;
-    }
-
-    private void checkLocationCount() {
-        if (goodLocationCount > 5) {
-            switchPiecesToPicture();
-            showProgressionNotification("Got the first digit! Let's investigate that Mr. Swift.");
-            ComponentUtil.fireEvent(
-                    getUI().get(), new MiniGameDoneEvent(this, MiniGameDoneEvent.Minigames.PUZZLE));
-        }
-    }
-
-    private void switchPiecesToPicture() {
-        puzzleLayout.removeAll();
-        Image image = new Image(
-                "images/complete-postit.png",
-                "Puzzle complete displaying the digit 3 and the name of a mister Swift");
-        image.setWidth(360, Unit.PIXELS);
-        puzzleLayout.add(image);
-    }
-
-    @Override
-    protected void customViewAttachCalls() {
-        if (!sessionData.isFileUnlock()) {
-            showProgressionNotification("This post-it looks like it's holding some useful " +
-                    "information, I should put back the pieces together.");
-        } else {
-            switchPiecesToPicture(); // If the player has already done the puzzle, we show them the full image
-        }
     }
 
 }
