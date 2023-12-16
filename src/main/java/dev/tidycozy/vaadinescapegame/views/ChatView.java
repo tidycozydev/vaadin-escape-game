@@ -24,12 +24,15 @@ import java.util.List;
 @Route(value = "chat", layout = LobbyView.class)
 public class ChatView extends MiniGameView {
 
+    public static final int CHAT_VIEW_DIGIT = 8;
+
     private String playerName;
     private String suspectCurrentName;
 
     private final MessageList messageList = new MessageList();
 
     private boolean robotThinking;
+
     private boolean alreadySaidHello;
 
     private boolean caseOpened;
@@ -87,7 +90,7 @@ public class ChatView extends MiniGameView {
 
         // Message expected to progress in the game
         if (!caseOpened && userMentionedSuspect(lastMessage)) {
-            answer = "Opening case number 8, suspect's name: " + suspectCurrentName + ".";
+            answer = "Opening case number " + CHAT_VIEW_DIGIT + ", suspect's name: " + suspectCurrentName + ".";
             if (!suspectCurrentName.equalsIgnoreCase("swift")) {
                 answer += " You changed the suspect's name! Not sure what the protocol says about it...";
             }

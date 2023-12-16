@@ -27,6 +27,8 @@ import com.vaadin.flow.router.Route;
 @Route(value = "file", layout = LobbyView.class)
 public class FileView extends MiniGameView {
 
+    public static final int FILE_VIEW_DIGIT = 1;
+
     private final TextField filterField = new TextField("Filter by name");
 
     private final Grid<Person> grid = new Grid<>(Person.class);

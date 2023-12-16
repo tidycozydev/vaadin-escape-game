@@ -37,6 +37,8 @@ public class LobbyView extends AppLayout {
 
     private Tabs tabs;
 
+    private Tab exitTab, puzzleTab, fileTab, chatTab, caseTab;
+
     public LobbyView() {
         configureNavbar();
         configureDrawer();
@@ -140,40 +142,59 @@ public class LobbyView extends AppLayout {
         }
     }
 
+    /**
+     * Add the tabs when the player progresses and update tabs label as a reminder of the digits already found.
+     */
     private void updateTabs() {
-        tabs.removeAll();
-
         // The exit view
-        Tab exitTab = createTab(VaadinIcon.EXIT, "The exit", ExitView.class);
+        if (exitTab == null) {
+            Tab exitTab = createTab(VaadinIcon.EXIT, "The exit", ExitView.class);
+            tabs.add(exitTab);
+        }
 
         // The puzzle view
-        //Different for mobile devices due to lack of stability for drag n drop API
-        String puzzleTabLabel = "The puzzle" + (sessionData.isFileUnlock() ? " - 3" : "");
-        WebBrowser browser = getUI().get().getSession().getBrowser();
-        Class<? extends Component> viewClass =
-                browser.isAndroid() || browser.isIPhone() || browser.isWindowsPhone()
-                        ? PuzzleMobileView.class
-                        : PuzzleView.class;
-        Tab puzzleTab = createTab(VaadinIcon.PUZZLE_PIECE, puzzleTabLabel, viewClass);
-
-        tabs.add(exitTab, puzzleTab);
+        if (puzzleTab == null) {
+            // Different for mobile devices due to lack of stability for drag n drop API
+            String puzzleTabLabel = "The puzzle";
+            WebBrowser browser = getUI().get().getSession().getBrowser();
+            Class<? extends Component> viewClass =
+                    browser.isAndroid() || browser.isIPhone() || browser.isWindowsPhone()
+                            ? PuzzleMobileView.class
+                            : PuzzleView.class;
+            puzzleTab = createTab(VaadinIcon.PUZZLE_PIECE, puzzleTabLabel, viewClass);
+            tabs.add(puzzleTab);
+        } else if (sessionData.isFileUnlock()) {
+            updateTab(puzzleTab, "The puzzle - " + PuzzleView.PUZZLE_VIEW_DIGIT);
+        }
 
         // The file view
         if (sessionData.isFileUnlock()) {
-            String fileTabLabel = "The file" + (sessionData.isChatUnlock() ? " - 1" : "");
-            tabs.add(createTab(VaadinIcon.FILE_PICTURE, fileTabLabel, FileView.class));
+            if (fileTab == null) {
+                fileTab = createTab(VaadinIcon.FILE_PICTURE, "The file", FileView.class);
+                tabs.add(fileTab);
+            } else if (sessionData.isChatUnlock()) {
+                updateTab(fileTab, "The file - " + FileView.FILE_VIEW_DIGIT);
+            }
         }
 
         // The chat view
         if (sessionData.isChatUnlock()) {
-            String chatTabLabel = "The chat" + (sessionData.isCaseUnlock() ? " - 8" : "");
-            tabs.add(createTab(VaadinIcon.CHAT, chatTabLabel, ChatView.class));
+            if (chatTab == null) {
+                chatTab = createTab(VaadinIcon.CHAT, "The chat", ChatView.class);
+                tabs.add(chatTab);
+            } else if (sessionData.isCaseUnlock()) {
+                updateTab(chatTab, "The chat - " + ChatView.CHAT_VIEW_DIGIT);
+            }
         }
 
         // The case view
         if (sessionData.isCaseUnlock()) {
-            String caseTabLabel = "The case" + (sessionData.isCaseFinished() ? " - 5" : "");
-            tabs.add(createTab(VaadinIcon.FOLDER, caseTabLabel, CaseView.class));
+            if (caseTab == null) {
+                caseTab = createTab(VaadinIcon.FOLDER, "The case", CaseView.class);
+                tabs.add(caseTab);
+            } else if (sessionData.isCaseFinished()) {
+                updateTab(caseTab, "The case - " + CaseView.CASE_VIEW_DIGIT);
+            }
         }
     }
 
@@ -190,6 +211,12 @@ public class LobbyView extends AppLayout {
         link.setRoute(viewClass);
 
         return new Tab(link);
+    }
+
+    private void updateTab(Tab tab, String newName) {
+        Span span = (Span) tab.getChildren().findFirst().get() // That's the RouterLink
+                        .getChildren().filter(component -> component instanceof Span).findFirst().get(); // That's the Span
+        span.setText(newName);
     }
 
 }

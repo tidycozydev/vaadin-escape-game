@@ -24,6 +24,8 @@ import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 @Route(value = "case", layout = LobbyView.class)
 public class CaseView extends MiniGameView {
 
+    public static final int CASE_VIEW_DIGIT = 5;
+
     private final H1 title = new H1();
     private final Span name = new Span();
     private final Span birthDate = new Span();
@@ -90,7 +92,8 @@ public class CaseView extends MiniGameView {
 
         registration = textArea.addValueChangeListener(event -> {
             if (textArea.getValue().contains("318")) {
-                registration.remove(); // As we write in the text area, we remove the listener to prevent endless loop
+                // As we write in the text area, we remove the listener to prevent endless loop
+                registration.remove();
 
                 textArea.setValue(
                         textArea.getValue() +

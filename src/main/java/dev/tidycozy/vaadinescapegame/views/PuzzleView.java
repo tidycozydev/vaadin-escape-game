@@ -21,6 +21,8 @@ import dev.tidycozy.vaadinescapegame.events.MiniGameDoneEvent;
 @Route(value = "puzzle", layout = LobbyView.class)
 public class PuzzleView extends MiniGameView {
 
+    public static int PUZZLE_VIEW_DIGIT = 3;
+
     protected final VerticalLayout puzzleLayout = new VerticalLayout();
 
     protected final HorizontalLayout dropLayout1 = new HorizontalLayout();

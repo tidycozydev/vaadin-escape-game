@@ -3,7 +3,7 @@ package dev.tidycozy.vaadinescapegame.components;
 import com.vaadin.flow.component.textfield.TextField;
 
 /**
- * This component is a Vaadin {@link TextField} allowing to display or to hide the actual value of the field.
+ * This component is a Vaadin {@link TextField} allowing to display or hide the actual value of the field.
  */
 public class SecretTextField extends TextField {
 

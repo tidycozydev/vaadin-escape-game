@@ -84,10 +84,10 @@ public class ExitView extends MiniGameView {
 
     private boolean codeCorrect() {
         return sessionData.isCaseFinished()
-                && firstField.getValue().equals(3)
-                && secondField.getValue().equals(1)
-                && thirdField.getValue().equals(8)
-                && fourthField.getValue().equals(5);
+                && firstField.getValue().equals(PuzzleView.PUZZLE_VIEW_DIGIT)
+                && secondField.getValue().equals(FileView.FILE_VIEW_DIGIT)
+                && thirdField.getValue().equals(ChatView.CHAT_VIEW_DIGIT)
+                && fourthField.getValue().equals(CaseView.CASE_VIEW_DIGIT);
     }
 
     private void showEndGameDialog() {

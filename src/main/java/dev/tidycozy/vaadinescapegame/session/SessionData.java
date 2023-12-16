@@ -7,13 +7,13 @@ import dev.tidycozy.vaadinescapegame.utils.ApplicationUtils;
 import java.util.List;
 
 /**
- * Keeps track of the progress in the game, the player's name and the dumb database for the file mini-game.
+ * Keeps track of the progress in the game, the player's name and the dumb database for the
+ * {@link dev.tidycozy.vaadinescapegame.views.FileView} mini-game.
  * The instance is stored in the {@link com.vaadin.flow.server.VaadinSession} of each player.
  */
 public class SessionData {
 
     public static final String SESSION_DATA_ATTRIBUTE = "sessionDataAttribute";
-
 
     public static final int ID_SUSPECT = 18;
     public static final int SECRET_SUSPECT = 1;
@@ -78,6 +78,7 @@ public class SessionData {
             new Person(17, "Rhianna", "Miranda",
                     ApplicationUtils.generateRandomDate(), Continent.NORTH_AMERICA,
                     ApplicationUtils.generateRandomInt(0, 9)),
+            // Here is our suspect
             new Person(ID_SUSPECT, "Bobby", "Swift",
                     ApplicationUtils.generateRandomDate(), Continent.EUROPE, SECRET_SUSPECT),
             new Person(19, "Yusuf", "Vargas",

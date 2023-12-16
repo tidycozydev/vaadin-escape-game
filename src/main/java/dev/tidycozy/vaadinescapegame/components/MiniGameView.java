@@ -37,5 +37,8 @@ public abstract class MiniGameView extends VerticalLayout {
         }
     }
 
+    /**
+     * Each implementation will be able to do custom calls after the {@link AttachEvent} is triggered.
+     */
     protected abstract void customViewAttachCalls();
 }
