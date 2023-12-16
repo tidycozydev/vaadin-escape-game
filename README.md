@@ -15,6 +15,8 @@ Have fun with it: https://tidycozy.dev/vaadin-escape-game
 
 ## What's next?
 
+I'm not pleased by how it reacts on mobile. I could dig into that.
+
 I intend to implement statistics and some machine learning to improve the dogbot.
 
 ## Build the jar
