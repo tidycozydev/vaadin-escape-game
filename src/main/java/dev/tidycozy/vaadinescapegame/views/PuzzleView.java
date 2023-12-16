@@ -36,6 +36,13 @@ public class PuzzleView extends MiniGameView {
     private DragSource<Image> topLeftImage, topMiddleImage, topRightImage,
             bottomLeftImage, bottomMiddleImage, bottomRightImage;
 
+    protected static final String TOP_LEFT_IMAGE_ID = "puzzle-tl";
+    protected static final String TOP_MIDDLE_IMAGE_ID = "puzzle-tm";
+    protected static final String TOP_RIGHT_IMAGE_ID = "puzzle-tr";
+    protected static final String BOTTOM_LEFT_IMAGE_ID = "puzzle-bl";
+    protected static final String BOTTOM_MIDDLE_IMAGE_ID = "puzzle-bm";
+    protected static final String BOTTOM_RIGHT_IMAGE_ID = "puzzle-br";
+
     protected int goodLocationCount = 0;
 
     public PuzzleView() {
@@ -60,17 +67,17 @@ public class PuzzleView extends MiniGameView {
 
     private void configurePuzzlePieces() {
         topLeftImage = createDragSourceImage(
-                "images/tl.png", "Hint: top left image ;)", "puzzle-tl");
+                "images/tl.png", "Hint: top left image ;)", TOP_LEFT_IMAGE_ID);
         topMiddleImage = createDragSourceImage(
-                "images/tm.png", "Hint: top middle image ;)", "puzzle-tm");
+                "images/tm.png", "Hint: top middle image ;)", TOP_MIDDLE_IMAGE_ID);
         topRightImage = createDragSourceImage(
-                "images/tr.png", "Hint: top right image ;)", "puzzle-tr");
+                "images/tr.png", "Hint: top right image ;)", TOP_RIGHT_IMAGE_ID);
         bottomLeftImage = createDragSourceImage(
-                "images/bl.png", "Hint: bottom left image ;)", "puzzle-bl");
+                "images/bl.png", "Hint: bottom left image ;)", BOTTOM_LEFT_IMAGE_ID);
         bottomMiddleImage = createDragSourceImage(
-                "images/bm.png", "Hint: bottom middle image ;)", "puzzle-bm");
+                "images/bm.png", "Hint: bottom middle image ;)", BOTTOM_MIDDLE_IMAGE_ID);
         bottomRightImage = createDragSourceImage(
-                "images/br.png", "Hint: bottom right image ;)", "puzzle-br");
+                "images/br.png", "Hint: bottom right image ;)", BOTTOM_RIGHT_IMAGE_ID);
     }
 
     private DragSource<Image> createDragSourceImage(String imageUrl, String imageAlt, String imageId) {
@@ -93,12 +100,12 @@ public class PuzzleView extends MiniGameView {
     }
 
     private void configureDropZonesAndLayouts() {
-        VerticalLayout topLeftTarget = createDragTargetLayout(topLeftImage, "puzzle-tl");
-        VerticalLayout topMiddleTarget = createDragTargetLayout(topMiddleImage, "puzzle-tm");
-        VerticalLayout topRightTarget = createDragTargetLayout(topRightImage, "puzzle-tr");
-        VerticalLayout bottomLeftTarget = createDragTargetLayout(bottomLeftImage, "puzzle-bl");
-        VerticalLayout bottomMiddleTarget = createDragTargetLayout(bottomMiddleImage, "puzzle-bm");
-        VerticalLayout bottomRightTarget = createDragTargetLayout(bottomRightImage, "puzzle-br");
+        VerticalLayout topLeftTarget = createDragTargetLayout(topLeftImage, TOP_LEFT_IMAGE_ID);
+        VerticalLayout topMiddleTarget = createDragTargetLayout(topMiddleImage, TOP_MIDDLE_IMAGE_ID);
+        VerticalLayout topRightTarget = createDragTargetLayout(topRightImage, TOP_RIGHT_IMAGE_ID);
+        VerticalLayout bottomLeftTarget = createDragTargetLayout(bottomLeftImage, BOTTOM_LEFT_IMAGE_ID);
+        VerticalLayout bottomMiddleTarget = createDragTargetLayout(bottomMiddleImage, BOTTOM_MIDDLE_IMAGE_ID);
+        VerticalLayout bottomRightTarget = createDragTargetLayout(bottomRightImage, BOTTOM_RIGHT_IMAGE_ID);
 
         dropLayout1.add(topLeftTarget, topMiddleTarget, topRightTarget);
         dropLayout2.add(bottomLeftTarget, bottomMiddleTarget, bottomRightTarget);

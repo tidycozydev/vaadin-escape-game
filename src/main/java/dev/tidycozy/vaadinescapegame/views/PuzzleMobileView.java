@@ -27,17 +27,17 @@ public class PuzzleMobileView extends PuzzleView {
 
     private void configurePuzzlePiecesAndLayouts() {
         Image topLeftImage = createSelectableImage(
-                "images/tl.png", "Hint: top left image ;)", "puzzle-tl");
+                "images/tl.png", "Hint: top left image ;)", TOP_LEFT_IMAGE_ID);
         Image topMiddleImage = createSelectableImage(
-                "images/tm.png", "Hint: top middle image ;)", "puzzle-tm");
+                "images/tm.png", "Hint: top middle image ;)", TOP_MIDDLE_IMAGE_ID);
         Image topRightImage = createSelectableImage(
-                "images/tr.png", "Hint: top right image ;)", "puzzle-tr");
+                "images/tr.png", "Hint: top right image ;)", TOP_RIGHT_IMAGE_ID);
         Image bottomLeftImage = createSelectableImage(
-                "images/bl.png", "Hint: bottom left image ;)", "puzzle-bl");
+                "images/bl.png", "Hint: bottom left image ;)", BOTTOM_LEFT_IMAGE_ID);
         Image bottomMiddleImage = createSelectableImage(
-                "images/bm.png", "Hint: bottom middle image ;)", "puzzle-bm");
+                "images/bm.png", "Hint: bottom middle image ;)", BOTTOM_MIDDLE_IMAGE_ID);
         Image bottomRightImage = createSelectableImage(
-                "images/br.png", "Hint: bottom right image ;)", "puzzle-br");
+                "images/br.png", "Hint: bottom right image ;)", BOTTOM_RIGHT_IMAGE_ID);
 
         piecesLayout1.add(topRightImage, topLeftImage, bottomRightImage);
         piecesLayout2.add(bottomMiddleImage, topMiddleImage, bottomLeftImage);
@@ -58,12 +58,12 @@ public class PuzzleMobileView extends PuzzleView {
     }
 
     private void configureDropZonesAndLayouts() {
-        VerticalLayout topLeftTarget = createDragTargetLayout("puzzle-tl");
-        VerticalLayout topMiddleTarget = createDragTargetLayout("puzzle-tm");
-        VerticalLayout topRightTarget = createDragTargetLayout("puzzle-tr");
-        VerticalLayout bottomLeftTarget = createDragTargetLayout("puzzle-bl");
-        VerticalLayout bottomMiddleTarget = createDragTargetLayout("puzzle-bm");
-        VerticalLayout bottomRightTarget = createDragTargetLayout("puzzle-br");
+        VerticalLayout topLeftTarget = createDragTargetLayout(TOP_LEFT_IMAGE_ID);
+        VerticalLayout topMiddleTarget = createDragTargetLayout(TOP_MIDDLE_IMAGE_ID);
+        VerticalLayout topRightTarget = createDragTargetLayout(TOP_RIGHT_IMAGE_ID);
+        VerticalLayout bottomLeftTarget = createDragTargetLayout(BOTTOM_LEFT_IMAGE_ID);
+        VerticalLayout bottomMiddleTarget = createDragTargetLayout(BOTTOM_MIDDLE_IMAGE_ID);
+        VerticalLayout bottomRightTarget = createDragTargetLayout(BOTTOM_RIGHT_IMAGE_ID);
 
         dropLayout1.add(topLeftTarget, topMiddleTarget, topRightTarget);
         dropLayout2.add(bottomLeftTarget, bottomMiddleTarget, bottomRightTarget);
