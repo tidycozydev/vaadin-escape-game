@@ -19,6 +19,14 @@ import com.vaadin.flow.data.binder.BeanValidationBinder;
  */
 public class PersonForm extends FormLayout {
 
+    private final TextField firstName = new TextField("First name");
+
+    private final TextField lastName = new TextField("Last name");
+
+    private final DatePicker birthDate = new DatePicker("Birth date");
+
+    private final ComboBox<Continent> location = new ComboBox<>("Location");
+
     private final SecretTextField secret = new SecretTextField("Secret");
 
     private final Checkbox showSecret = new Checkbox("Show secret");
@@ -28,14 +36,12 @@ public class PersonForm extends FormLayout {
     public PersonForm() {
         binder.bindInstanceFields(this);
 
-        ComboBox<Continent> location = new ComboBox<>("Location");
         location.setItems(Continent.values());
+
         secret.setReadOnly(true);
+
         showSecret.addValueChangeListener(event -> handleSecretDisplay());
 
-        DatePicker birthDate = new DatePicker("Birth date");
-        TextField lastName = new TextField("Last name");
-        TextField firstName = new TextField("First name");
         add(firstName, lastName, birthDate, location, secret, showSecret);
 
         Button saveButton = new Button("Save");

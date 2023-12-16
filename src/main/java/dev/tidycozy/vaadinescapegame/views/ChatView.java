@@ -60,7 +60,7 @@ public class ChatView extends MiniGameView {
                 // After a message, robot will "think" about it and answer
                 robotThinking();
             } else {
-                showWarningNotification("Dog robot is already thinking");
+                showWarningNotification("Dogbot is already thinking");
             }
         });
 
@@ -187,7 +187,7 @@ public class ChatView extends MiniGameView {
     };
 
     private void robotWrite(String message) {
-        MessageListItem newMessage = new MessageListItem(message, Instant.now(), "Robot");
+        MessageListItem newMessage = new MessageListItem(message, Instant.now(), "Dogbot");
         newMessage.setUserImage("images/robot.png");
         newMessage.setUserColorIndex(1);
         List<MessageListItem> items = new ArrayList<>(messageList.getItems());
