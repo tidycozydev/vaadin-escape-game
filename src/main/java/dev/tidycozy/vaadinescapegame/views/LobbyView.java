@@ -148,7 +148,7 @@ public class LobbyView extends AppLayout {
     private void updateTabs() {
         // The exit view
         if (exitTab == null) {
-            Tab exitTab = createTab(VaadinIcon.EXIT, "The exit", ExitView.class);
+            exitTab = createTab(VaadinIcon.EXIT, "The exit", ExitView.class);
             tabs.add(exitTab);
         }
 
