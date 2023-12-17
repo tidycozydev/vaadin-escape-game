@@ -48,6 +48,12 @@ public class PuzzleView extends MiniGameView {
     public PuzzleView() {
         setSizeFull();
 
+        // In this specific case, two different views for two behaviour (desktop and mobile),
+        // all building calls will be in a method we can override: buildView().
+        buildView();
+    }
+
+    protected void buildView() {
         configurePuzzlePieces();
         configurePuzzlePiecesLayouts();
         configureDropZonesAndLayouts();

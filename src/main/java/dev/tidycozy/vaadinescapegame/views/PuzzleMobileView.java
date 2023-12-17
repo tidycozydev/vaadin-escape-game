@@ -17,9 +17,8 @@ public class PuzzleMobileView extends PuzzleView {
 
     private Image selectedImage;
 
-    public PuzzleMobileView() {
-        setSizeFull();
-
+    @Override
+    protected void buildView() {
         configurePuzzlePiecesAndLayouts();
         configureDropZonesAndLayouts();
         configurePuzzleLayout();
